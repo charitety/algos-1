@@ -5,22 +5,34 @@
 # Anagrams are strings that contain the same characters, but in any order.
 
 def anagrams(s1, s2):
-  pass #TODO:
+  #add condition to discard false cases where lenght is different
+  if len(s1) != len(s2):
+    return False
+  #create to lists of all the letters in each strings
+  string1 = [char for char in s1]
+  string2 = [char for char in s2]
 
+  #order lists to get them ready to compare
+  string1.sort()
+  string2.sort()
 
-
-
-
+  #compare the two lists
+  if string1 == string2:
+  #if the lists are equal, return True, 
+    return True
+  #if they are different, return False
+  else:
+    return False
 
 
 # # TEST CASES
-anagrams('restful', 'fluster') # -> True
-# anagrams('cats', 'tocs') # -> False
-# anagrams('monkeyswrite', 'newyorktimes') # -> True
-# anagrams('paper', 'reapa') # -> False
-# anagrams('elbow', 'below') # -> True
-# anagrams('tax', 'taxi') # -> False
-# anagrams('taxi', 'tax') # -> False
-# anagrams('night', 'thing') # -> True
-# anagrams('po', 'popp') # -> False
-# anagrams('pp', 'oo') # -> False
+print(anagrams('restful', 'fluster'))# -> True
+print(anagrams('cats', 'tocs'))# -> False
+print(anagrams('monkeyswrite', 'newyorktimes')) # -> True
+print(anagrams('paper', 'reapa')) # -> False
+print(anagrams('elbow', 'below')) # -> True
+print(anagrams('tax', 'taxi')) # -> False
+print(anagrams('taxi', 'tax')) # -> False
+print(anagrams('night', 'thing')) # -> True
+print(anagrams('po', 'popp')) # -> False
+print(anagrams('pp', 'oo')) # -> False
